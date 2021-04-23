@@ -1,4 +1,6 @@
 import stopmodule
+import startmodule
+
 
 import os, time, glob, pathlib,shutil,datetime
 from shutil import copyfile, rmtree
@@ -140,3 +142,6 @@ for root, dirs, files in os.walk(last_catalog):
             file_log.write(str(now) + " Модуль SPARS обновлен\n")
         else: 
             file_log.write(str(now) + " Найден неизвестный модуль, требуется обновление в ручном режиме\n")
+
+startmodule.test_login(driver)
+startmodule.start_pc(driver)
