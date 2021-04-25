@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select  
 #import time
 
-def test_login(driver):
+def test_login(driver):#авторизация в веб-панели процессинга
     driver.get("http://192.168.131.10/monitoring_3cardf_39/upc3cardf/login?type=U")
 
     assert "Управление процессинговым центром 3Card-F 3Card-F" in driver.title
@@ -18,7 +18,7 @@ def test_login(driver):
     find_text = driver.find_element_by_class_name("license")
 
 
-def stop_pc(driver):
+def stop_pc(driver):#остановка процессинга
     driver.implicitly_wait(10)
     stop_btn = driver.find_element_by_css_selector("#work_area > div.group_4 > div.stop")
     stop_btn.click()
