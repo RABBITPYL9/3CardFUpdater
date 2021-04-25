@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select  
 #import time
 
-def test_login(driver):
+def test_login(driver):#проводим авторизацию в веб-панели управления процессинга
     driver.get("http://192.168.131.10/monitoring_3cardf_39/upc3cardf/login?type=U")
 
     assert "Управление процессинговым центром 3Card-F 3Card-F" in driver.title
@@ -19,7 +19,7 @@ def test_login(driver):
     #assert "Вы вошли как: spars" in driver.page_source
 
 
-def start_pc(driver):
+def start_pc(driver):#запуск процессинга
     driver.implicitly_wait(10)
     driver.find_element_by_css_selector("#work_area > div.group_12 > div.start").click()
 
